@@ -1,0 +1,6 @@
+a = int(input())
+b = int(input())
+int_div=a//b
+fl_div=a/b
+print(int_div)
+print(fl_div)
