@@ -1,0 +1,14 @@
+# py-set-difference-operation
+
+# Read input
+n1 = int(input())
+english = set(map(int, input().split()))
+
+n2 = int(input())
+french = set(map(int, input().split()))
+
+# Students subscribed only to English (difference)
+only_english = english - french
+
+# Output the count
+print(len(only_english))
