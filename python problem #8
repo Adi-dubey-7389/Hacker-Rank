@@ -1,0 +1,19 @@
+# /py-set-mutations
+
+# Read size of set A (not used directly)
+n = int(input())
+
+# Read set A
+A = set(map(int, input().split()))
+
+# Read number of operations
+N = int(input())
+
+# Apply each operation
+for _ in range(N):
+    op, _ = input().split()             # operation name and size (size is unused)
+    other_set = set(map(int, input().split()))
+    getattr(A, op)(other_set)           # dynamically call the method on set A
+
+# Output final sum
+print(sum(A))
