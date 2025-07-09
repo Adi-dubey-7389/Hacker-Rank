@@ -1,0 +1,14 @@
+# py-set-symmetric-difference-operation
+
+# Read input
+n1 = int(input())
+english = set(map(int, input().split()))
+
+n2 = int(input())
+french = set(map(int, input().split()))
+
+# Symmetric difference: elements in either English or French, but not both
+only_one = english ^ french
+
+# Output the count
+print(len(only_one))
