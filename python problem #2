@@ -1,0 +1,17 @@
+#Find the indices of the start and end of the substring matched by the group.
+
+import re
+
+S = input()
+K = input()
+
+pattern = re.compile(f'(?=({K}))')
+matches = list(pattern.finditer(S))
+
+if matches:
+    for m in matches:
+        start = m.start()
+        end = start + len(K) - 1
+        print((start, end))
+else:
+    print((-1, -1))
