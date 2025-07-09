@@ -1,0 +1,14 @@
+# py-set-intersection-operation
+
+# Read input values
+n1 = int(input())
+english = set(map(int, input().split()))
+
+n2 = int(input())
+french = set(map(int, input().split()))
+
+# Find intersection (students subscribed to both)
+both = english & french
+
+# Output the count
+print(len(both))
