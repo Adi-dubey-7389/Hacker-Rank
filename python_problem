@@ -1,0 +1,25 @@
+#nested lists
+
+students = []
+
+# Read number of students
+n = int(input())
+
+# Read student name and grade, store in list
+for _ in range(n):
+    name = input()
+    score = float(input())
+    students.append([name, score])
+
+# Extract all unique scores and sort them
+unique_scores = sorted({score for name, score in students})
+
+# Get the second lowest score
+second_lowest = unique_scores[1]
+
+# Get names of students with the second lowest score
+names = sorted([name for name, score in students if score == second_lowest])
+
+# Print names line by line
+for name in names:
+    print(name)
