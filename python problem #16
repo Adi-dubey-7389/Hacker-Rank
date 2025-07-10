@@ -1,0 +1,24 @@
+# list
+
+if __name__ == '__main__':
+    N = int(input())
+    lst = []
+    
+    for _ in range(N):
+        cmd = input().split()
+        operation = cmd[0]
+        
+        if operation == "insert":
+            lst.insert(int(cmd[1]), int(cmd[2]))
+        elif operation == "print":
+            print(lst)
+        elif operation == "remove":
+            lst.remove(int(cmd[1]))
+        elif operation == "append":
+            lst.append(int(cmd[1]))
+        elif operation == "sort":
+            lst.sort()
+        elif operation == "pop":
+            lst.pop()
+        elif operation == "reverse":
+            lst.reverse()
