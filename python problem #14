@@ -1,0 +1,18 @@
+# np-mean-var-and-std
+
+import numpy as np
+
+# Read dimensions
+n, m = map(int, input().split())
+
+# Read the array
+arr = np.array([list(map(int, input().split())) for _ in range(n)])
+
+# Mean along axis 1
+print(np.mean(arr, axis=1))
+
+# Variance along axis 1
+print(np.var(arr, axis=1))
+
+# Standard deviation along axis 0
+print(np.std(arr, axis=0))
