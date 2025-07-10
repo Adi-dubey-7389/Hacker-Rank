@@ -1,0 +1,15 @@
+# most-commons
+
+
+from collections import Counter
+
+if __name__ == '__main__':
+    s = input().strip()
+    counter = Counter(s)
+
+    # Sort by: 1) frequency descending (-count), 2) character ascending
+    sorted_chars = sorted(counter.items(), key=lambda item: (-item[1], item[0]))
+
+    # Print top 3
+    for char, count in sorted_chars[:3]:
+        print(f"{char} {count}")
