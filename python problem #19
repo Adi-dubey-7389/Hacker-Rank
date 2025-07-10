@@ -1,0 +1,19 @@
+#alphabet-rangoli
+
+def print_rangoli(size):
+    import string
+
+    alphabet = string.ascii_lowercase
+    lines = []
+
+    for i in range(size):
+        left = alphabet[size-1:i:-1]  # descending part
+        center = alphabet[i]          # center letter
+        right = alphabet[i+1:size]    # ascending part
+        row = '-'.join(left + center + right)
+        width = 4 * size - 3
+        lines.append(row.center(width, '-'))
+
+    # Combine top and bottom
+    full_rangoli = '\n'.join(lines[::-1] + lines[1:])
+    print(full_rangoli)
