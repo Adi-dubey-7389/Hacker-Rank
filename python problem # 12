@@ -1,0 +1,12 @@
+# np-linear-algebra
+
+import numpy as np
+
+n = int(input())
+matrix = [list(map(float, input().split())) for _ in range(n)]
+
+# Compute the determinant
+det = np.linalg.det(matrix)
+
+# Print rounded to 2 decimal places
+print(round(det, 2))
