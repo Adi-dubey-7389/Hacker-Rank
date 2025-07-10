@@ -1,0 +1,14 @@
+# np-min-and-max
+
+import numpy as np
+
+# Read dimensions
+n, m = map(int, input().split())
+
+# Read the array
+arr = np.array([list(map(int, input().split())) for _ in range(n)])
+
+# Compute row-wise min, then max of those
+result = np.max(np.min(arr, axis=1))
+
+print(result)
