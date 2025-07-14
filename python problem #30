@@ -1,0 +1,19 @@
+# challenges
+
+
+from collections import OrderedDict
+
+n = int(input())
+items = OrderedDict()
+
+for _ in range(n):
+    *name_parts, price = input().split()
+    name = ' '.join(name_parts)
+    price = int(price)
+    if name in items:
+        items[name] += price
+    else:
+        items[name] = price
+
+for item, total in items.items():
+    print(f"{item} {total}")
