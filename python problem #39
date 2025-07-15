@@ -1,0 +1,24 @@
+# standardize-mobile-number-using-decorators
+
+
+def wrapper(f):
+    def fun(l):
+        # Standardize numbers to 10-digit and format to +91 xxxxx xxxxx
+        formatted = []
+        for number in l:
+            number = number[-10:]  # Extract last 10 digits
+            formatted.append(f"+91 {number[:5]} {number[5:]}")
+        return f(formatted)
+    return fun
+
+@wrapper
+def sort_phone(numbers):
+    # Sort and print each number
+    for number in sorted(numbers):
+        print(number)
+
+# Input handling
+if __name__ == '__main__':
+    n = int(input())
+    numbers = [input().strip() for _ in range(n)]
+    sort_phone(numbers)
