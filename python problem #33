@@ -1,0 +1,23 @@
+# piling-up
+
+from collections import deque
+
+def can_stack(cubes):
+    dq = deque(cubes)
+    last = float('inf')  # Start with an infinitely large cube
+    while dq:
+        # Choose the larger cube from either end that fits
+        if dq[0] >= dq[-1] and dq[0] <= last:
+            last = dq.popleft()
+        elif dq[-1] >= dq[0] and dq[-1] <= last:
+            last = dq.pop()
+        else:
+            return "No"
+    return "Yes"
+
+# Read input
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    cubes = list(map(int, input().split()))
+    print(can_stack(cubes))
