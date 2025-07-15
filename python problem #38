@@ -1,0 +1,20 @@
+# maximize-it
+
+from itertools import product
+
+# Read input
+k, m = map(int, input().split())
+
+# Read k lists
+lists = []
+for _ in range(k):
+    numbers = list(map(int, input().split()))[1:]  # Skip the first number (count), just take the elements
+    lists.append(numbers)
+
+# Generate all combinations
+max_mod = 0
+for combination in product(*lists):
+    total = sum(x ** 2 for x in combination) % m
+    max_mod = max(max_mod, total)
+
+print(max_mod)
