@@ -1,0 +1,15 @@
+# symmetric-difference
+
+
+# Read input
+m = int(input())
+a = set(map(int, input().split()))
+n = int(input())
+b = set(map(int, input().split()))
+
+# Calculate symmetric difference
+result = a.symmetric_difference(b)
+
+# Print each element in sorted order
+for num in sorted(result):
+    print(num)
