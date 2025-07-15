@@ -1,0 +1,18 @@
+# iterables-and-iterators
+
+from itertools import combinations
+
+# Read inputs
+n = int(input())
+letters = input().split()
+k = int(input())
+
+# Find all combinations of size k
+all_combinations = list(combinations(letters, k))
+
+# Count combinations that contain at least one 'a'
+count_with_a = sum(1 for comb in all_combinations if 'a' in comb)
+
+# Compute and print probability
+probability = count_with_a / len(all_combinations)
+print(f"{probability:.4f}")
