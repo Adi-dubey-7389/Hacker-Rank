@@ -1,0 +1,12 @@
+# check-subset
+
+
+t = int(input())  # Number of test cases
+
+for _ in range(t):
+    a_len = int(input())  # Length of set A (not used)
+    A = set(map(int, input().split()))
+    b_len = int(input())  # Length of set B (not used)
+    B = set(map(int, input().split()))
+
+    print(A.issubset(B))
