@@ -1,0 +1,16 @@
+# set-union
+
+
+# Number of students with English subscription
+n = int(input())
+english_subscribers = set(map(int, input().split()))
+
+# Number of students with French subscription
+m = int(input())
+french_subscribers = set(map(int, input().split()))
+
+# Union of both sets gives students with at least one subscription
+total_unique = english_subscribers.union(french_subscribers)
+
+# Print the count
+print(len(total_unique))
